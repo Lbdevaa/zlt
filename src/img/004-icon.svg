@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="15" viewBox="0 0 22 15">
+  <defs>
+    <style>
+      .a {
+        fill: #888;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <title>04-Statistics-Icon-Default</title>
+  <polygon class="a" points="1 0 1 13.2 5.3 13.2 5.3 9.9 6.3 9.9 6.3 13.2 10.6 13.2 10.6 6.6 11.6 6.6 11.6 13.2 15.9 13.2 15.9 3.3 16.9 3.3 16.9 13.2 21.2 13.2 21.2 0 22.2 0 22.2 14.2 0 14.2 0 0 1 0"/>
+</svg>

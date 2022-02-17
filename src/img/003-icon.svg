@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="15" viewBox="0 0 22 15">
+  <defs>
+    <style>
+      .a {
+        fill: #888;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <title>03-Messages-Icon-Default</title>
+  <path class="a" d="M22.2,0V14.2H0V0ZM1.7,1l9.4,9.4L20.5,1Zm19.5.7L11.1,11.8,1,1.7V13.2H21.2Z"/>
+</svg>

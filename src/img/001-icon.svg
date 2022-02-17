@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="23" height="16" viewBox="0 0 23 16">
+  <defs>
+    <style>
+      .a {
+        fill: #888;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <title>01-Items-Icon-Default</title>
+  <path class="a" d="M1,0A.94.94,0,0,1,2,.88H2V1a.94.94,0,0,1-.88,1H1a.94.94,0,0,1-1-.88H0V1A1.08,1.08,0,0,1,1,0ZM6.8,13.7H22.2v1H6.8ZM1,13.2a1,1,0,0,1,0,2,.94.94,0,0,1-1-.88H0V14.2A1,1,0,0,1,1,13.2ZM6.8,7.1H22.2v1H6.8ZM1,6.6a.94.94,0,0,1,1,.88H2V7.6a.94.94,0,0,1-.88,1H1a.94.94,0,0,1-1-.88H0V7.6A1,1,0,0,1,1,6.6ZM6.8.5H22.2v1H6.8Z" transform="translate(0 0)"/>
+</svg>

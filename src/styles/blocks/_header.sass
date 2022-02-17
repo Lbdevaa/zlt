@@ -1,1 +1,300 @@
+.header
+  font-weight: 300
+  height: 70px
+  width: 100%
+  border-top: #572c5f solid 3px
+  border-bottom: #888 solid 2px
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+  position: relative
+  z-index: 11
+  &__sticky
+    position: -webkit-sticky
+    position: sticky
+    top: 0
 
+.header .container
+  height: 100%
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-orient: horizontal
+  -webkit-box-direction: normal
+  -ms-flex-direction: row
+  flex-direction: row
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  max-width: unset
+  background-color: #fff
+  position: relative
+  z-index: 10
+
+.header-left
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-orient: horizontal
+  -webkit-box-direction: normal
+  -ms-flex-direction: row
+  flex-direction: row
+  -webkit-box-pack: justify
+  -ms-flex-pack: justify
+  justify-content: space-between
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  margin-right: 29px
+
+.logo
+  width: 114px
+  height: auto
+  margin-bottom: -12px
+  img
+    width: 100%
+    height: auto
+
+.header .border
+  height: 30px
+  width: 1px
+  background: #000
+  margin: 0 9px
+
+.header-left h2
+  font-family: "Proxima Nova", sans-serif
+  font-size: 14px
+  font-weight: 300
+
+.menu-box
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-orient: horizontal
+  -webkit-box-direction: normal
+  -ms-flex-direction: row
+  flex-direction: row
+  -webkit-box-pack: start
+  -ms-flex-pack: start
+  justify-content: flex-start
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  padding-right: 100px
+  padding-left: 0
+  height: 100%
+  padding: 16px 0 6px
+  li
+    list-style: none
+    width: 100%
+    height: 100%
+  li:nth-child(1)
+    margin-right: 49px
+  li:nth-child(2)
+    margin-right: 32px
+  li:nth-child(3)
+    margin-right: 15px
+  li:nth-child(4)
+    margin-right: 15px
+  li a
+    height: 100%
+    width: 100%
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+    -webkit-box-pack: justify
+    -ms-flex-pack: justify
+    justify-content: space-between
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    color: #888888
+    text-decoration: none
+    font-size: 12px
+  & li a img
+    width: auto
+  & li:hover a img
+    color: #572c5f
+  & li:hover a
+    color: #8031a7
+
+.header-right
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-orient: horizontal
+  -webkit-box-direction: normal
+  -ms-flex-direction: row
+  flex-direction: row
+  -webkit-box-pack: start
+  -ms-flex-pack: start
+  justify-content: flex-start
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  margin-left: auto
+
+.header-lk
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-orient: horizontal
+  -webkit-box-direction: normal
+  -ms-flex-direction: row
+  flex-direction: row
+  -webkit-box-pack: start
+  -ms-flex-pack: start
+  justify-content: flex-start
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  cursor: pointer
+  span
+    color: #888
+    margin-left: 6px
+    display: inline-block
+    width: 190px
+    position: relative
+  span::after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: white
+    background: -webkit-gradient(linear, left top, right top, color-stop(85%, rgba(255, 255, 255, 0.25)), to(white))
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.25) 85%, white 100%)
+  span:hover
+    color: #8031a7
+  &__menu
+    display: none
+    position: absolute
+    bottom: 0
+    right: 0
+    -webkit-transform: translateY(100%)
+    -ms-transform: translateY(100%)
+    transform: translateY(100%)
+    width: 255px
+    background-color: #fff
+    border-top: 2px solid #8031a7
+    border-bottom: 2px solid #8031a7
+  &__menu-list
+    list-style: none
+    padding: 10px
+    margin: 0
+  &__menu-item
+    margin: 20px 0
+  &__menu-item--profile
+    padding-bottom: 20px
+    border-bottom: 1px solid #989898
+  &__menu-link
+    font-family: "Proxima Nova", sans-serif
+    font-size: 14px
+    color: #989898
+    margin-bottom: 10px
+    text-decoration: none
+
+.burger-menu__nav-list
+  list-style: none
+  display: none
+  border-bottom: #888 solid 2px
+  padding: 20px 40px 10px 40px
+  margin: 0
+
+.burger-menu__overlay
+  display: none
+  position: fixed
+  top: 70px
+  right: 0
+  width: 100vw
+  height: 100vh
+  z-index: 10
+  background-color: rgba(0, 0, 0, 0.5)
+
+.tabs
+  width: 100%
+
+.f-nav
+  z-index: 9999
+  position: fixed
+  left: 0
+  padding-left: 30px
+  top: 0
+  width: 100%
+  background: #fff
+
+.tabs__caption
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-orient: horizontal
+  -webkit-box-direction: normal
+  -ms-flex-direction: row
+  flex-direction: row
+  -webkit-box-pack: start
+  -ms-flex-pack: start
+  justify-content: flex-start
+  -webkit-box-align: start
+  -ms-flex-align: start
+  align-items: flex-start
+  list-style: none
+  position: relative
+  margin: -1px 0 0 -1px
+  padding: 0
+  li a
+    text-decoration: none
+    color: #222222
+    text-transform: uppercase
+    font-size: 14px
+  li a:hover
+    color: #8031a7
+  li:last-child:before
+    content: ""
+    position: absolute
+    bottom: -5px
+    left: 0
+    right: -2px
+    z-index: -1
+    height: 5px
+  &:after
+    content: ""
+    display: table
+    clear: both
+  li
+    padding: 0 0 16px 0
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
+    margin: 0 20px 0 0
+    position: relative
+    font-size: 14px
+  li:not(.active)
+    cursor: pointer
+  li:not(.active):hover
+    color: #572c5f
+  .active:after
+    content: ""
+    position: absolute
+    bottom: -1px
+    left: 0
+    right: 0
+    height: 3px
+    background: #572c5f
+
+.header-right .button
+  background: url("../img/button.svg") no-repeat
+  display: inline-block
+  color: #8031a7
+  text-decoration: none
+  padding: 15px 4px 0 0
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+  text-align: center
+  width: 174px
+  height: 39px
+  margin-top: -5px
+  &:hover
+    color: #572c5f
