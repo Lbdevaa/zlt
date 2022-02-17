@@ -1,0 +1,22 @@
+@import "vars";
+
+@import "fonts";
+
+@import "vendors";
+
+@import "settings";
+
+@import "typhography";
+
+@import "global"; //дополнительные классы
+
+// Подключение универсальных блоков
+
+@import "blocks/header"; // Шапка
+
+@import "blocks/footer"; // Подвал
+
+// Каждая страница подключается отдельно и включает в себя уникальные стили, все универсальные блоки подключаем выше
+
+@import "pages/index"; // главная
+
