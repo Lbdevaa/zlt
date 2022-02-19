@@ -2,7 +2,7 @@
   font-weight: 300
   height: 70px
   width: 100%
-  border-top: #572c5f solid 3px
+  border-top: var(--accent) solid 3px
   border-bottom: #888 solid 2px
   -webkit-box-sizing: border-box
   box-sizing: border-box
@@ -117,7 +117,7 @@
   & li a img
     width: auto
   & li:hover a img
-    color: #572c5f
+    color: var(--accent)
   & li:hover a
     color: #8031a7
 
@@ -274,7 +274,7 @@
   li:not(.active)
     cursor: pointer
   li:not(.active):hover
-    color: #572c5f
+    color: var(--accent)
   .active:after
     content: ""
     position: absolute
@@ -282,7 +282,7 @@
     left: 0
     right: 0
     height: 3px
-    background: #572c5f
+    background: var(--accent)
 
 .header-right .button
   background: url("../img/button.svg") no-repeat
@@ -297,4 +297,4 @@
   height: 39px
   margin-top: -5px
   &:hover
-    color: #572c5f
+    color: var(--accent)
