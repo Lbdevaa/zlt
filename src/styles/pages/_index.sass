@@ -6,7 +6,7 @@
   position: sticky
   left: 0
   top: 0
-  z-index: 11
+  z-index: 15
   padding-top: 24px
   &__bottom
     display: flex
@@ -20,13 +20,16 @@
     margin: 0
     width: 100%
     letter-spacing: 0.05em
+    line-height: 1.5625
+    line-height: 0.7
   &__nav
     width: calc(100%/12 * 8 - 30px)
     align-self: flex-end
   &__more
-    width: calc(100%/12 * 4)
+    max-width: calc(100%/12 * 4)
     display: flex
     gap: 45px
+    padding-bottom: 10px
 
 .page-more-box
   line-height: 1.7
@@ -40,7 +43,7 @@
   display: flex
   &__item
     line-height: 1.7
-    margin-right: 40px
+    margin-right: 35px
     &.active
       position: relative
       &::before
@@ -134,18 +137,25 @@
       grid-template-columns: repeat(auto-fill, minmax(200px , 1fr))
     .field-box
       margin-bottom: 50px
-      &:last-child
+      &:last-child,
         margin-bottom: 0
+      &--paragraph
+        margin-bottom: 20px
   &__control
     display: flex
     justify-self: end
     align-items: center
+    .move-block
+      border-right: none
 
 .field-box
+  position: relative
   &__header
     margin-bottom: 10px
     display: flex
     align-items: baseline
+    position: relative
+    z-index: 11
   &__title
     font-size: rem(15px)
     color: #888888
@@ -203,6 +213,10 @@
       margin-bottom: rem(7px)
   &__field-wrap
     border: 1px solid #d9d9d9
+    &--paragraph
+      margin-top: -40px
+    &--border-none
+      border: none
     &--image
       border: 1px dashed #d9d9d9
       padding: 30px
@@ -230,6 +244,41 @@
       font-family: "OpenSans", sans-serif
       font-size: rem(18px)
       line-height: 1.83
+      padding: 0
+      .fr-second-toolbar
+        display: none
+      .fr-toolbar
+        &.fr-top
+          border-radius: 0
+          border-top: none
+          border-left: none
+          border-right: none
+          .fr-btn-grp
+            float: right
+            border: 1px solid #efefef
+            border-bottom: none
+            margin: 0
+            position: relative
+            z-index: 11
+            .fr-btn
+              border-right: 1px solid #efefef
+              margin-top: 0
+              margin: 0
+              border-radius: 0
+              &:last-child
+                border-right: none
+        .fr-newline
+          margin: 0
+      .fr-box.fr-basic
+        .fr-element
+          min-height: 180px
+          font-family: "OpenSans", sans-serif
+          font-size: rem(18px)
+          line-height: 1.83
+
+.fr-box.fr-basic .fr-wrapper
+  border-right: 1px solid #efefef
+  border-left: 1px solid #efefef
 
 .add-block
   display: flex

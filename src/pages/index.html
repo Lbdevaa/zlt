@@ -8,6 +8,9 @@
   <title>ZLT</title>
 
   <!-- Подключаем стили -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" /> -->
+
+  <link href="libs/froala/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
@@ -275,7 +278,7 @@
           <div class="page-inner__box page-box">
             <h2 class="page-box__title">Абзац</h2>
             <div class="page-box__container">
-              <div class="field-box">
+              <div class="field-box field-box--paragraph">
                 <div class="field-box__header">
                   <p class="field-box__title">Редактор абзаца</p>
                   <div class="field-box__help">
@@ -296,7 +299,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="field-box__field-wrap">
+                <div class="field-box__field-wrap field-box__field-wrap--paragraph field-box__field-wrap--border-none">
                     <div class="field-box__field field-box__field--paragraph" >
                      <p>
                       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -370,17 +373,10 @@
     </div>
   </div>
 
-  <script src="js/main.min.js"></script>
-  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
-  <script>
-    tinymce.init({
-      selector: '.field-box__field--paragraph'
-    });
-  </script>
-  <!-- <script>
-    new FroalaEditor('.field-box__field--paragraph')
-  </script> -->
+
+
+  <script src="js/main.min.js"></script>
 
 </body>
 </html>
