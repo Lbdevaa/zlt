@@ -10,7 +10,8 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
   if (document.querySelector(paragraphField)) {
     FroalaEditor(paragraphField, {
-      toolbarButtons: [`help`, `bold`, `italic`, `insertLink`]
+      toolbarButtons: [`help`, `bold`, `italic`, `insertLink`],
+      quickInsertTags: []
     })
   }
 
@@ -67,13 +68,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
             </div>
             <div class="field-box__field-wrap field-box__field-wrap--paragraph field-box__field-wrap--border-none">
                 <div class="field-box__field field-box__field--paragraph" >
-                <p>
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                <p>
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
-                </p>
+
                 </div>
             </div>
           </div>
@@ -114,8 +109,10 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
     if (document.querySelector(paragraphField)) {
       FroalaEditor(paragraphField, {
-        toolbarButtons: [`help`, `bold`, `italic`, `insertLink`]
-      })
+        toolbarButtons: [`help`, `bold`, `italic`, `insertLink`],
+        quickInsertTags: []
+      },
+      )
     }
   }
 
