@@ -319,15 +319,15 @@
     will-change: transform
 
 .move-block
-  &__up, &__down
+  &__btn
     cursor: pointer
     transition: .2s ease transform
-  &__up
-    &:hover
-      transform: translateY(-2px)
-  &__down
-    &:hover
-      transform: translateY(2px)
+    &--up
+      &:hover
+        transform: translateY(-2px)
+    &--down
+      &:hover
+        transform: translateY(2px)
 
 .del-block
   cursor: pointer

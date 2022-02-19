@@ -6,15 +6,6 @@ $(document).ready(() => {
 })
 
 document.addEventListener(`DOMContentLoaded`, () => {
-  let paragraphField = `.field-box__field--paragraph`
-
-  if (document.querySelector(paragraphField)) {
-    FroalaEditor(paragraphField, {
-      toolbarButtons: [`help`, `bold`, `italic`, `insertLink`],
-      quickInsertTags: []
-    })
-  }
-
   const uploadInputs = document.querySelectorAll(`.upload-box__input`)
   const fileTypes = [
     `image/jpeg`,
@@ -24,6 +15,54 @@ document.addEventListener(`DOMContentLoaded`, () => {
   const limitedText = document.querySelectorAll(`.js-limited-text`)
   const addBlocks = document.querySelectorAll(`.add-block`)
   let delBlockBtns = document.querySelectorAll(`.del-block`)
+  let moveBlockBtns = document.querySelectorAll(`.move-block__btn`)
+
+  const paragraphField = `.field-box__field--paragraph`
+
+  moveBlockBtns.forEach((element) => {
+    element.addEventListener(`click`, (event) => moveBlock(event))
+  })
+
+  function moveBlock(event) {
+    const thisBtn = event.target.closest(`.move-block__btn`)
+    const curBlock = thisBtn.closest(`.page-box`)
+    const curBlockNode = curBlock.outerHTML
+    let btnMove = ``
+
+    if (thisBtn.classList.contains(`move-block__btn--up`)) {
+      btnMove = `up`
+    } else if (thisBtn.classList.contains(`move-block__btn--down`)) {
+      btnMove = `down`
+    }
+
+    if (btnMove.length) {
+      const prevBlock = curBlock.previousElementSibling
+      const nextBlock = curBlock.nextElementSibling
+      const curBlockHeight = curBlock.clientHeight
+
+      if (btnMove === `up` && prevBlock) {
+        const prevBlockToTop = prevBlock.getBoundingClientRect().top + window.pageYOffset
+        prevBlock.insertAdjacentHTML(`beforebegin`, curBlockNode)
+        window.scroll(0, prevBlockToTop - curBlockHeight / 2)
+        curBlock.remove()
+      }
+      if (btnMove === `down` && nextBlock) {
+        const nextBlockToTop = curBlock.getBoundingClientRect().top + window.pageYOffset
+        nextBlock.insertAdjacentHTML(`afterend`, curBlockNode)
+        window.scroll(0, nextBlockToTop + nextBlock.clientHeight - 200)
+        curBlock.remove()
+      }
+    }
+    updateBtnsArray()
+  }
+
+  if (document.querySelector(paragraphField)) {
+    FroalaEditor(paragraphField, {
+      toolbarButtons: [`help`, `bold`, `italic`, `insertLink`],
+      quickInsertTags: []
+    })
+  }
+
 
   delBlockBtns.forEach((element) => {
     element.addEventListener(`click`, (event) => deleteBlock(event))
@@ -36,11 +75,14 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
   addBlocks.forEach((element) => {
     element.addEventListener(`click`, (event) => createBlock(event))
+    updateBtnsArray()
   })
 
   function createBlock(event) {
     const curBlock = event.target.closest(`.add-block`)
-    const blockName = curBlock.querySelector(`.add-block__title`).innerHTML
+    let blockName = curBlock.querySelector(`.add-block__title`).innerText.toLowerCase()
+    blockName = blockName.charAt(0).toUpperCase() + blockName.substr(1)
+
     const textHtml = `
       <div class="page-inner__box page-box">
         <h2 class="page-box__title">${blockName}</h2>
@@ -68,18 +110,17 @@ document.addEventListener(`DOMContentLoaded`, () => {
             </div>
             <div class="field-box__field-wrap field-box__field-wrap--paragraph field-box__field-wrap--border-none">
                 <div class="field-box__field field-box__field--paragraph" >
-
                 </div>
             </div>
           </div>
           <div class="page-box__control">
             <div class="move-block">
-              <div class="move-block__up">
+              <div class="move-block__btn move-block__btn--up">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#bcbcbc" class="bi bi-chevron-up" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
                 </svg>
               </div>
-              <div class="move-block__down">
+              <div class="move-block__btn move-block__btn--down">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#bcbcbc" class="bi bi-chevron-down" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                 </svg>
@@ -97,22 +138,28 @@ document.addEventListener(`DOMContentLoaded`, () => {
     `
     curBlock.closest(`.page-box`).insertAdjacentHTML(`beforebegin`, textHtml)
     updateBtnsArray()
+    updateParagraphFields()
   }
 
   function updateBtnsArray() {
     delBlockBtns = document.querySelectorAll(`.del-block`)
+    moveBlockBtns = document.querySelectorAll(`.move-block__btn`)
 
     delBlockBtns.forEach((element) => {
       element.addEventListener(`click`, (event) => deleteBlock(event))
     })
-    paragraphField = `.field-box__field--paragraph`
 
+    moveBlockBtns.forEach((element) => {
+      element.addEventListener(`click`, (event) => moveBlock(event))
+    })
+  }
+
+  function updateParagraphFields() {
     if (document.querySelector(paragraphField)) {
       FroalaEditor(paragraphField, {
         toolbarButtons: [`help`, `bold`, `italic`, `insertLink`],
         quickInsertTags: []
-      },
-      )
+      })
     }
   }
 
